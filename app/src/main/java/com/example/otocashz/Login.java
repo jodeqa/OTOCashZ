@@ -6,11 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -33,7 +31,6 @@ public class Login extends AppCompatActivity {
     private static final String URL_FOR_LOGIN = "http://sagmicddev01.oto.co.id:54321/api/Authenticate/Login";
     ProgressDialog progressDialog;
     private EditText loginInputUserName, loginInputPassword;
-    private Button btnlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +39,6 @@ public class Login extends AppCompatActivity {
 
         loginInputUserName = findViewById(R.id.login_input_username);
         loginInputPassword = findViewById(R.id.login_input_password);
-        btnlogin = findViewById(R.id.btn_login);
 
         // Progress dialog
         progressDialog = new ProgressDialog(this);
@@ -56,10 +52,6 @@ public class Login extends AppCompatActivity {
     private void hideDialog() {
         if (progressDialog.isShowing())
             progressDialog.dismiss();
-    }
-
-    public void onLogin(View view) {
-        loginUserPOSTWithRawBody(loginInputUserName.getText().toString(), loginInputPassword.getText().toString());
     }
 
     private void loginUserPOSTWithRawBody(final String username, final String password) {
@@ -76,15 +68,19 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     hideDialog();
-                    Log.i("LOG_RESPONSE", response.toString());
+                    Log.d(TAG, response);
                     try {
+
                         JSONObject jObj = new JSONObject(response);
-                        Log.d(TAG, "get token: " + jObj.getJSONObject("Result.Token").getString("AccessToken"));
-                        String user = jObj.getString("AccessToken");
+                        JSONObject jResult = jObj.getJSONObject("Result");
+                        JSONObject jTtoken = jResult.getJSONObject("Token");
+
+                        Log.d(TAG, "get token: " + jTtoken.getString("AccessToken"));
+
                         // Launch User activity
-                        Intent intent = new Intent(Login.this,MainActivity.class);
-                        intent.putExtra("AccessToken", jObj.getJSONObject("Result.Token").getString("AccessToken"));
-                        intent.putExtra("Uid", jObj.getJSONObject("Result.Token").getString("Uid"));
+                        Intent intent = new Intent(Login.this, UserActivity.class);
+                        intent.putExtra("AccessToken", jTtoken.getString("AccessToken"));
+                        intent.putExtra("Uid", jTtoken.getString("Uid"));
                         startActivity(intent);
                         finish();
                     } catch (JSONException e) {
@@ -95,7 +91,7 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     hideDialog();
-                    Log.e("LOG_RESPONSE", error.toString());
+                    Log.d(TAG, error.toString());
                 }
             }) {
                 @Override
@@ -104,7 +100,7 @@ public class Login extends AppCompatActivity {
                 }
 
                 @Override
-                public byte[] getBody() throws AuthFailureError {
+                public byte[] getBody() {
                     try {
                         return mRequestBody == null ? null : mRequestBody.getBytes("utf-8");
                     } catch (UnsupportedEncodingException uee) {
@@ -139,7 +135,7 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Register Response: " + response.toString());
+                Log.d(TAG, "Register Response: " + response);
                 hideDialog();
                 try {
                     JSONObject jObj = new JSONObject(response);
@@ -148,7 +144,7 @@ public class Login extends AppCompatActivity {
                     // Launch User activity
                     Intent intent = new Intent(
                             Login.this,
-                            MainActivity.class);
+                            UserActivity.class);
                     intent.putExtra("username", user);
                     startActivity(intent);
                     finish();
@@ -171,7 +167,7 @@ public class Login extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 // Posting params to login url
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 //params.put("grant_type", "password");
                 params.put("username", username);
                 params.put("password", password);
@@ -186,4 +182,7 @@ public class Login extends AppCompatActivity {
         AppSingleton.getInstance(getApplicationContext()).addToRequestQueue(strReq,cancel_req_tag);
     }
 
+    public void onLogin(View view) {
+        loginUserPOSTWithRawBody(loginInputUserName.getText().toString(), loginInputPassword.getText().toString());
+    }
 }
