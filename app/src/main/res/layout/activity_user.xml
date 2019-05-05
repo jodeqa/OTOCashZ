@@ -9,7 +9,7 @@
     tools:context=".UserActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgCashZ"
         android:layout_width="76dp"
         android:layout_height="76dp"
         android:layout_marginStart="44dp"
@@ -17,26 +17,27 @@
         android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/logo_oma_steer" />
+        app:srcCompat="@drawable/logo_oma_steer" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtCashZ"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
-        android:text="OTO CashZ"
+        android:text="@string/app_title_oto_cashz"
         android:textColor="@color/white"
         android:textSize="42sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgCashZ"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        tools:layout_editor_absoluteY="46dp" />
+        app:layout_constraintStart_toEndOf="@+id/imgCashZ"
+        app:layout_constraintTop_toTopOf="@+id/imgCashZ" />
 
     <LinearLayout
-        android:id="@+id/transaction"
+        android:id="@+id/loTransaction"
         android:layout_width="319dp"
         android:layout_height="411dp"
         android:layout_marginStart="8dp"
@@ -56,14 +57,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/txtCashZ"
         app:layout_constraintVertical_bias="0.085">
 
         <TextView
             android:id="@+id/txtCustName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Customer Name"
+            android:text="@string/customer_name"
             android:textColor="@color/white" />
 
         <EditText
@@ -78,7 +79,7 @@
             android:id="@+id/txtCustMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="@color/white" />
 
         <EditText
@@ -93,7 +94,7 @@
             android:id="@+id/txtCustHP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HP"
+            android:text="@string/hp"
             android:textColor="@color/white" />
 
         <EditText
@@ -108,7 +109,7 @@
             android:id="@+id/txtCustDebit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Transaction"
+            android:text="@string/transaction"
             android:textColor="@color/white" />
 
         <EditText
@@ -124,14 +125,14 @@
             android:layout_width="126dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Transaction"
+            android:text="@string/btn_transaction"
             android:textColor="#000000"
             android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/logout"
+        android:id="@+id/loLogout"
         android:layout_width="315dp"
         android:layout_height="123dp"
         android:layout_marginStart="8dp"
@@ -156,17 +157,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:onClick="goConfig"
             android:text="Hello, User"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/logout_button"
+            android:id="@+id/btnLogOut"
             android:layout_width="126dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Sign Out!!"
+            android:onClick="goLogOut"
+            android:text="@string/btn_sign_out"
             android:textColor="#000000"
             android:textStyle="bold" />
 

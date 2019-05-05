@@ -8,6 +8,37 @@
     android:background="@color/cl_oto"
     tools:context=".Login">
 
+    <TextView
+        android:id="@+id/txtCashZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/app_title_oto_cashz"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgCashZ" />
+
+    <ImageView
+        android:id="@+id/imgCashZ"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_oma_steer" />
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="310dp"
         android:layout_height="275dp"
@@ -19,7 +50,7 @@
         android:background="@drawable/layout_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/txtCashZ">
 
         <EditText
             android:id="@+id/login_input_username"
@@ -30,7 +61,7 @@
             android:layout_marginEnd="8dp"
             android:hint="@string/hint_username"
             android:inputType=""
-            android:text="yosep.widiadhi"
+            android:text="@string/default_test_userName"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +76,7 @@
             android:layout_marginTop="24dp"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
-            android:text="-*050508r4D4r"
+            android:text="@string/default_test_userPassword"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/login_input_username"
             app:layout_constraintStart_toStartOf="@+id/login_input_username"
@@ -71,34 +102,4 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/logo_oma_steer" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="OTO CashZ"
-        android:textColor="@color/white"
-        android:textSize="42sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </android.support.constraint.ConstraintLayout>

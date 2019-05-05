@@ -45,6 +45,10 @@ public class Login extends AppCompatActivity {
         progressDialog.setCancelable(false);
     }
 
+    public void onLogin(View view) {
+        loginUserPOSTWithRawBody(loginInputUserName.getText().toString(), loginInputPassword.getText().toString());
+    }
+
     private void showDialog() {
         if (!progressDialog.isShowing())
             progressDialog.show();
@@ -55,6 +59,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginUserPOSTWithRawBody(final String username, final String password) {
+        Log.d(TAG, "login User POST With Raw Body");
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             JSONObject jsonBody = new JSONObject();
@@ -126,12 +131,12 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginUserPOSTWithKeyMap( final String username, final String password) {
-        // Tag used to cancel the request
+        Log.d(TAG, "login User POST With KeyMap");
+
         String cancel_req_tag = "login";
         progressDialog.setMessage("Logging you in...");
         showDialog();
-        StringRequest strReq = new StringRequest(Request.Method.POST,
-                URL_FOR_LOGIN, new Response.Listener<String>() {
+        StringRequest strReq = new StringRequest(Request.Method.POST, URL_FOR_LOGIN, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -157,9 +162,8 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, "Login Error: " + error.getMessage());
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "Login Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                 hideDialog();
             }
         }) {
@@ -182,7 +186,4 @@ public class Login extends AppCompatActivity {
         AppSingleton.getInstance(getApplicationContext()).addToRequestQueue(strReq,cancel_req_tag);
     }
 
-    public void onLogin(View view) {
-        loginUserPOSTWithRawBody(loginInputUserName.getText().toString(), loginInputPassword.getText().toString());
-    }
 }

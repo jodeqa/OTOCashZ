@@ -6,7 +6,21 @@
     <string name="err_msg_required">Valid Input Required</string>
     <string name="err_msg_email">Please enter a Valid Email</string>
     <string name="err_msg_password">Enter a Password</string>
-    <string name="err_msg_dob">Enter a valid D.O.B</string>
     <string name="btn_login">Login</string>
     <string name="main_logo">Main Logo</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="email">Email</string>
+    <string name="hp">HP</string>
+    <string name="transaction">Transaction</string>
+    <string name="btn_transaction">Transaction</string>
+    <string name="btn_sign_out">Sign Out!!</string>
+    <string name="reader_connection_status">Reader Connection Status</string>
+    <string name="printer_connection_status">Printer Connection Status</string>
+    <string name="waiting">..waiting..</string>
+    <string name="bt_check_reader">Check Reader</string>
+    <string name="bt_check_printer">Check Printer</string>
+    <string name="bt_test_printer">Test Printer</string>
+    <string name="app_title_oto_cashz">OTO CashZ</string>
+    <string name="default_test_userName">yosep.widiadhi</string>
+    <string name="default_test_userPassword">-*050508r4D4r</string>
 </resources>
