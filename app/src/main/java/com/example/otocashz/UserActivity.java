@@ -1,6 +1,7 @@
 package com.example.otocashz;
 
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,11 +34,12 @@ public class UserActivity extends AppCompatActivity implements ICLLoginService {
         Bundle bundle = getIntent().getExtras();
         String user = bundle.getString("AccessToken");
 
-        greetingTextView = (TextView) findViewById(R.id.greeting_text_view);
-        btnLogOut = (Button) findViewById(R.id.btnLogOut);
-        greetingTextView.setText("Token \n"+ user);
+        greetingTextView = findViewById(R.id.greeting_text_view);
+        btnLogOut = findViewById(R.id.btnLogOut);
+        greetingTextView.setText(user);
 
-        loginHandler = new CLLoginHandler(getApplicationContext(), (ICLLoginService) this);
+        loginHandler = new CLLoginHandler(this, this);
+
         executeLogin();
 
     }
@@ -61,8 +63,7 @@ public class UserActivity extends AppCompatActivity implements ICLLoginService {
 
     private void executeLogin() {
         Log.d(TAG, "Login Device Initialized");
-        User user = new User("Abcd@1111", "123456");
-        loginHandler.doLogin(user.getUserName(), user.getPin());
+        loginHandler.doLogin("Oto", "123456");
     }
 
     private void executeLogOut() {
@@ -78,15 +79,23 @@ public class UserActivity extends AppCompatActivity implements ICLLoginService {
 
     @Override
     public void onLoginSuccess(CLLoginResponse clLoginResponse) {
+        onLoginOK();
+    }
+
+    public void onLoginOK() {
         Toast.makeText(getApplicationContext(), "Device Login Accepted", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "Device Login Accepted");
     }
 
     @Override
     public void onLoginError(CLErrorResponse clErrorResponse) {
-        Toast.makeText(getApplicationContext(), clErrorResponse.getErrorMessage(), Toast.LENGTH_SHORT).show();
+        onLoginFailed(clErrorResponse.getErrorMessage());
+    }
+
+    public void onLoginFailed(String failedMessage) {
+        Toast.makeText(getApplicationContext(), failedMessage, Toast.LENGTH_SHORT).show();
         Log.d(TAG, "Login Device Failed");
-        Log.d(TAG, clErrorResponse.toString());
+        Log.d(TAG, failedMessage);
         executeLogOut();
     }
 

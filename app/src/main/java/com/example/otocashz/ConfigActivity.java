@@ -9,15 +9,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cashlez.android.sdk.CLErrorResponse;
+
+
 import com.cashlez.android.sdk.companion.printer.CLPrinterCompanion;
 import com.cashlez.android.sdk.companion.reader.CLReaderCompanion;
 import com.cashlez.android.sdk.model.CLPrintObject;
 import com.cashlez.android.sdk.payment.CLPaymentResponse;
-import com.cashlez.android.sdk.payment.CLTCashQRResponse;
-import com.cashlez.android.sdk.payment.CLTMoneyResponse;
 import com.cashlez.android.sdk.payment.noncash.CLPaymentHandler;
 import com.cashlez.android.sdk.payment.noncash.ICLPaymentHandler;
-import com.cashlez.android.sdk.payment.noncash.ICLPaymentService;
 import com.cashlez.android.sdk.printing.CLPrinterHandler;
 import com.cashlez.android.sdk.printing.ICLPrinterService;
 import com.cashlez.android.sdk.printing.ICLPrintingHandler;
@@ -27,7 +26,7 @@ import com.cashlez.android.sdk.service.CLPrintEnum;
 import java.util.ArrayList;
 
 
-public class ConfigActivity extends AppCompatActivity implements ICLPaymentService, ICLPrinterService {
+public class ConfigActivity extends AppCompatActivity implements ICLPrinterService {
 
     private static final String TAG = "ConfigActivity";
 
@@ -37,6 +36,11 @@ public class ConfigActivity extends AppCompatActivity implements ICLPaymentServi
     protected ICLPaymentHandler paymentHandler;
     private ICLPrintingHandler printingHandler;
 
+    private CLPaymentResponse data;
+    private CLReaderCompanion readerCompanion;
+    private CLPrinterCompanion printerCompanion;
+    private CLErrorResponse errorResponse;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,7 @@ public class ConfigActivity extends AppCompatActivity implements ICLPaymentServi
 
         readerStatus = findViewById(R.id.txtReaderStatus);
         printerStatus = findViewById(R.id.txtPrinterStatus);
+
 
         paymentHandler = new CLPaymentHandler(this, savedInstanceState);
         printingHandler = new CLPrinterHandler(this);
@@ -96,154 +101,34 @@ public class ConfigActivity extends AppCompatActivity implements ICLPaymentServi
     }
 
     @Override
-    public void onReaderSuccess(final CLReaderCompanion clReaderCompanion) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                readerStatus.setText(String.format("%s: %s\n%s: %s",
-                        getString(R.string.reader_connection_status), String.valueOf(clReaderCompanion.isConnected()),
-                        getString(R.string.message), clReaderCompanion.getMessage()));
-            }
-        });
-    }
-
-    @Override
-    public void onReaderError(final CLErrorResponse clErrorResponse) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                readerStatus.setText(clErrorResponse.getErrorMessage());
-            }
-        });
-    }
-
-    @Override
-    public void onPrinterSuccess(final CLPrinterCompanion clPrinterCompanion) {
+    public void onPrintingSuccess(CLPrinterCompanion clPrinterCompanion) {
+        setPrinterSuccess(printerCompanion);
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 printerStatus.setText(String.format("%s: %s\n%s: %s",
-                        getString(R.string.printer_connection_status), String.valueOf(clPrinterCompanion.isConnected()),
-                        getString(R.string.message), clPrinterCompanion.getMessage()));
+                        getString(R.string.printer_connection_status), String.valueOf(printerCompanion.isConnected()),
+                        getString(R.string.message), printerCompanion.getMessage()));
             }
         });
     }
 
-    @Override
-    public void onPrinterError(final CLErrorResponse clErrorResponse) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                printerStatus.setText(clErrorResponse.getErrorMessage());
-            }
-        });
-    }
-
-    @Override
-    public void onInsertCreditCard(CLPaymentResponse clPaymentResponse) {
-        Log.d(TAG, "Card Activity InsertCreditCard");
-        //not implementing
-    }
-
-    @Override
-    public void onInsertOrSwipeDebitCard(CLPaymentResponse clPaymentResponse) {
-        Log.d(TAG, "Card Activity InsertOrSwipeDebitCard");
-        //not implementing
-    }
-
-    @Override
-    public void onCashPaymentSuccess(CLPaymentResponse clPaymentResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onCashPaymentError(CLErrorResponse clErrorResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onPaymentSuccess(CLPaymentResponse clPaymentResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onRemoveCard(String s) {
-        Log.d(TAG, "Card Activity RemoveCard");
-        //not implementing
-    }
-
-    @Override
-    public void onProvideSignatureRequest(CLPaymentResponse clPaymentResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onPaymentError(CLErrorResponse clErrorResponse, String s) {
-        //not implementing
-    }
-
-    @Override
-    public void onProvideSignatureError(CLErrorResponse clErrorResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onTCashQRSuccess(CLTCashQRResponse cltCashQRResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onTCashQRError(CLErrorResponse clErrorResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onCheckTCashQRStatusSuccess(CLTCashQRResponse cltCashQRResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onCheckTCashQRStatusError(CLErrorResponse clErrorResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onTMoneySuccess(CLTMoneyResponse cltMoneyResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onTMoneyError(CLErrorResponse clErrorResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onCheckTMoneyStatusSuccess(CLTMoneyResponse cltMoneyResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onCheckTMoneyStatusError(CLErrorResponse clErrorResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onCancelTMoneySuccess(CLTMoneyResponse cltMoneyResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onCancelTMoneyError(CLErrorResponse clErrorResponse) {
-        //not implementing
-    }
-
-    @Override
-    public void onPrintingSuccess(CLPrinterCompanion clPrinterCompanion) {
-        Log.d(TAG, "Print Activity PrintingSuccess");
+    private void setPrinterSuccess(CLPrinterCompanion printerCompanion) {
+        this.printerCompanion = printerCompanion;
     }
 
     @Override
     public void onPrintingError(CLErrorResponse clErrorResponse) {
-        Log.d(TAG, "Print Activity PrintingError");
+        onPrinterError(errorResponse);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                printerStatus.setText(errorResponse.getErrorMessage());
+            }
+        });
+    }
+
+    private void onPrinterError(CLErrorResponse errorResponse) {
+        this.errorResponse = errorResponse;
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frm"
@@ -8,171 +8,173 @@
     android:background="@color/cl_oto"
     tools:context=".UserActivity">
 
-    <ImageView
-        android:id="@+id/imgCashZ"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_oma_steer" />
-
-    <TextView
-        android:id="@+id/txtCashZ"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:text="@string/app_title_oto_cashz"
-        android:textColor="@color/white"
-        android:textSize="42sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imgCashZ"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgCashZ"
-        app:layout_constraintTop_toTopOf="@+id/imgCashZ" />
-
-    <LinearLayout
-        android:id="@+id/loTransaction"
-        android:layout_width="319dp"
-        android:layout_height="411dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/layout_bg"
-        android:fillViewport="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCashZ"
-        app:layout_constraintVertical_bias="0.085">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtCustName"
+            android:id="@+id/txtCashZ"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/customer_name"
-            android:textColor="@color/white" />
-
-        <EditText
-            android:id="@+id/edCustName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/txtCustMail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textColor="@color/white" />
-
-        <EditText
-            android:id="@+id/edCustMail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/txtCustHP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/hp"
-            android:textColor="@color/white" />
-
-        <EditText
-            android:id="@+id/edCustHP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="phone"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/txtCustDebit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/transaction"
-            android:textColor="@color/white" />
-
-        <EditText
-            android:id="@+id/edCustDebit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/btnTrans"
-            android:layout_width="126dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/btn_transaction"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/loLogout"
-        android:layout_width="315dp"
-        android:layout_height="123dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="52dp"
-        android:background="@drawable/layout_bg"
-        android:fillViewport="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/greeting_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:onClick="goConfig"
-            android:text="Hello, User"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/app_title_oto_cashz"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/btnLogOut"
-            android:layout_width="126dp"
+        <LinearLayout
+            android:id="@+id/loTransaction"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:onClick="goLogOut"
-            android:text="@string/btn_sign_out"
-            android:textColor="#000000"
-            android:textStyle="bold" />
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_bg"
+            android:fillViewport="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scrollbars="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/txtContractType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/contract_type"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spiContractType"
+                style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/contract_type_arrays" />
+
+            <TextView
+                android:id="@+id/txtCustDebit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/transaction"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edCustDebit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:autofillHints="" />
+
+            <TextView
+                android:id="@+id/txtCustDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/description"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edCustDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:autofillHints="" tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/txtCustMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/email"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edCustMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:autofillHints="" tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/txtCustHP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/hp"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edCustHP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:autofillHints="" tools:targetApi="o" />
+
+            <Button
+                android:id="@+id/btnTrans"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/btn_transaction"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_bg"
+            android:fillViewport="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loTransaction">
+
+            <TextView
+                android:id="@+id/greeting_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="goConfig"
+                android:text="Hello, User"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnLogOut"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="goLogOut"
+                android:text="@string/btn_sign_out"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+</ScrollView>

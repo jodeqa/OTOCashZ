@@ -14,7 +14,7 @@
     <string name="hint_username">Nama User</string>
     <string name="hp">No HP Pelanggan</string>
     <string name="main_logo">Logo Utama</string>
-    <string name="transaction">transaksi</string>
+    <string name="transaction">Jumlah</string>
     <string name="reader_connection_status">Status Reader</string>
     <string name="printer_connection_status">Status Printer</string>
     <string name="waiting">..menunggu..</string>
@@ -24,4 +24,11 @@
     <string name="app_title_oto_cashz">OTO CashZ</string>
     <string name="default_test_userName">yosep.widiadhi</string>
     <string name="default_test_userPassword">-*050508r4D4r</string>
+    <string name="description">Deskripsi</string>
+    <string name="contract_type">Tipe Kontrak</string>
+    <string-array name="contract_type_arrays">
+        <item>NFS CF</item>
+        <item>KAB</item>
+        <item>SOLOs</item>
+    </string-array>
 </resources>

@@ -11,7 +11,7 @@
     <string name="customer_name">Customer Name</string>
     <string name="email">Email</string>
     <string name="hp">HP</string>
-    <string name="transaction">Transaction</string>
+    <string name="transaction">Amount</string>
     <string name="btn_transaction">Transaction</string>
     <string name="btn_sign_out">Sign Out!!</string>
     <string name="reader_connection_status">Reader Connection Status</string>
@@ -23,4 +23,12 @@
     <string name="app_title_oto_cashz">OTO CashZ</string>
     <string name="default_test_userName">yosep.widiadhi</string>
     <string name="default_test_userPassword">-*050508r4D4r</string>
+    <string name="contract_type">Contract Type</string>
+    <string name="description">Description</string>
+    <string-array name="contract_type_arrays">
+        <item>NFS CF</item>
+        <item>KAB</item>
+        <item>SOLOs</item>
+    </string-array>
+
 </resources>

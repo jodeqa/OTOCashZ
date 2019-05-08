@@ -46,7 +46,8 @@ public class Login extends AppCompatActivity {
     }
 
     public void onLogin(View view) {
-        loginUserPOSTWithRawBody(loginInputUserName.getText().toString(), loginInputPassword.getText().toString());
+        //loginUserPOSTWithRawBody(loginInputUserName.getText().toString(), loginInputPassword.getText().toString());
+        loginDummy(loginInputUserName.getText().toString(), loginInputPassword.getText().toString());
     }
 
     private void showDialog() {
@@ -56,6 +57,14 @@ public class Login extends AppCompatActivity {
     private void hideDialog() {
         if (progressDialog.isShowing())
             progressDialog.dismiss();
+    }
+
+    private void loginDummy(final String username, final String password) {
+        Log.d(TAG, "Dummy Test");
+        Intent intent = new Intent(Login.this, UserActivity.class);
+        intent.putExtra("AccessToken", username);
+        intent.putExtra("Uid", password);
+        startActivity(intent);
     }
 
     private void loginUserPOSTWithRawBody(final String username, final String password) {
