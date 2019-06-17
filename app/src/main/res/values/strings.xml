@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">OTOCashZ</string>
+    <string name="hint_username">UserName</string>
+    <string name="hint_password">Password</string>
+    <string name="err_msg_name">Please enter a Name</string>
+    <string name="err_msg_required">Valid Input Required</string>
+    <string name="err_msg_email">Please enter a Valid Email</string>
+    <string name="err_msg_password">Enter a Password</string>
+    <string name="err_mandatory">Must Be Filled !!!</string>
+    <string name="btn_login">Login</string>
+    <string name="main_logo">Main Logo</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="email">Email</string>
+    <string name="hp">HP</string>
+    <string name="transaction">Amount</string>
+    <string name="btn_transaction">Transaction</string>
+    <string name="btn_sign_out">Sign Out!!</string>
+    <string name="reader_connection_status">Reader Connection Status</string>
+    <string name="printer_connection_status">Printer Connection Status</string>
+    <string name="waiting">..waiting..</string>
+    <string name="bt_check_reader">Check Reader</string>
+    <string name="bt_check_printer">Check Printer</string>
+    <string name="bt_test_printer">Test Printer</string>
+    <string name="app_title_oto_cashz">CashZ</string>
+    <string name="default_test_userName">yosep.widiadhi</string>
+    <string name="default_test_userPassword">-*050508r4D4r</string>
+    <string name="contract_type">Contract Type</string>
+    <string name="description">Description</string>
+    <string-array name="contract_type_arrays">
+        <item>NFS CF</item>
+        <item>KAB</item>
+        <item>SOLOs</item>
+    </string-array>
+    <string name="cz_nasabah_OTO">PT Oto Multiartha</string>
+    <string name="cz_nasabah_SOF">PT Summit Oto Finance</string>
+    <string name="cz_bank_accno_OTO">0537.3003.494</string>
+    <string name="cz_bank_accno_SOF">0537.3003.486</string>
+    <string name="cz_bank_branch_OTO">Menara BTPN</string>
+    <string name="cz_bank_branch_SOF">Menara BTPN</string>
+    <string name="cz_bank_code_OTO">0213</string>
+    <string name="cz_bank_code_SOF">0213</string>
+    <string name="debit_transfer">Debit Transfer</string>
+    <string name="debit_transfer_not_supported">Debit Transfer Not Supported</string>
+
+</resources>

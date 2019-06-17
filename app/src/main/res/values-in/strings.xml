@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OTOCashZ</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_sign_out">LogOut</string>
+    <string name="btn_transaction">Transaksi</string>
+    <string name="customer_name">Nama Pelanggan</string>
+    <string name="email">Surel</string>
+    <string name="err_msg_email">Masukkan Alamat Surel yang benar</string>
+    <string name="err_msg_name">Masukkan Nama</string>
+    <string name="err_msg_password">Masukkan Password</string>
+    <string name="err_msg_required">Masukan Salah, betulkan</string>
+    <string name="err_mandatory">Harus Diisi !!!</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_username">Nama User</string>
+    <string name="hp">No HP Pelanggan</string>
+    <string name="main_logo">Logo Utama</string>
+    <string name="transaction">Jumlah</string>
+    <string name="reader_connection_status">Status Mesin</string>
+    <string name="printer_connection_status">Status Printer</string>
+    <string name="waiting">..menunggu..</string>
+    <string name="bt_check_reader">Periksa Reader</string>
+    <string name="bt_check_printer">Periksa Printer</string>
+    <string name="bt_test_printer">Tes Printer</string>
+    <string name="app_title_oto_cashz">CashZ</string>
+    <string name="default_test_userName">yosep.widiadhi</string>
+    <string name="default_test_userPassword">-*050508r4D4r</string>
+    <string name="description">Deskripsi</string>
+    <string name="contract_type">Tipe Kontrak</string>
+    <string-array name="contract_type_arrays">
+        <item>NFS CF</item>
+        <item>KAB</item>
+        <item>SOLOs</item>
+    </string-array>
+    <string name="cz_nasabah_OTO">PT Oto Multiartha</string>
+    <string name="cz_nasabah_SOF">PT Summit Oto Finance</string>
+    <string name="cz_bank_accno_OTO">0537.3003.494</string>
+    <string name="cz_bank_accno_SOF">0537.3003.486</string>
+    <string name="cz_bank_branch_OTO">Menara BTPN</string>
+    <string name="cz_bank_branch_SOF">Menara BTPN</string>
+    <string name="cz_bank_code_OTO">0213</string>
+    <string name="cz_bank_code_SOF">0213</string>
+    <string name="debit_transfer_not_supported">Transfer Debit Tidak Didukung</string>
+    <string name="debit_transfer">Transfer Debit</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OTOCashZ</string>
+    <string name="transaction">合計金額</string>
+    <string name="waiting">.. 待ってください ..</string>
+    <string name="hint_username">ユーザー名</string>
+    <string name="hp">携帯電話番号</string>
+    <string name="btn_login">ログイン</string>
+    <string name="btn_sign_out">ログアウト</string>
+    <string name="btn_transaction">取引</string>
+    <string name="contract_type">契約タイプ</string>
+    <string name="customer_name">顧客名</string>
+    <string name="default_test_userName">yosep.widiadhi</string>
+    <string name="default_test_userPassword">-*050508r4D4r</string>
+    <string name="description">の説明</string>
+    <string name="email">電子メールアドレス</string>
+    <string name="err_msg_email">有効なメールアドレスを入力してください</string>
+    <string name="err_msg_name">あなたの名前を入力してください</string>
+    <string name="err_msg_password">パスワードを入力してください</string>
+    <string name="err_msg_required">有効な入力が必要です</string>
+    <string name="err_mandatory">記入項目は記入する必要があります !!!</string>
+    <string name="hint_password">パスワード</string>
+    <string name="printer_connection_status">プリンタ接続状態</string>
+    <string name="reader_connection_status">機械接続ステータス</string>
+    <string name="main_logo">メインロゴ</string>
+    <string name="bt_test_printer">テストプリンター</string>
+    <string name="bt_check_reader">リーダーをチェック</string>
+    <string name="bt_check_printer">プリンターを確認してください</string>
+    <string name="app_title_oto_cashz">CashZ</string>
+    <string name="cz_nasabah_OTO">PT Oto Multiartha</string>
+    <string name="cz_nasabah_SOF">PT Summit Oto Finance</string>
+    <string name="cz_bank_accno_OTO">0537.3003.494</string>
+    <string name="cz_bank_accno_SOF">0537.3003.486</string>
+    <string name="cz_bank_branch_OTO">Menara BTPN</string>
+    <string name="cz_bank_branch_SOF">Menara BTPN</string>
+    <string name="cz_bank_code_OTO">0213</string>
+    <string name="cz_bank_code_SOF">0213</string>
+    <string name="debit_transfer_not_supported">借方振替はサポートされていません</string>
+    <string name="debit_transfer">借方振替</string>
+</resources>
